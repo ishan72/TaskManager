@@ -1,8 +1,9 @@
 
 .logo{
     display: flex;
+    margin-top: 1rem;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 
 }
 .icon{
@@ -61,4 +62,129 @@
 .nav-list li{
     list-style: none;
     margin-left: 2em;
+}
+
+/* main page's content of dashboard*/
+.main{
+    display: flex;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+.content-icons-list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.content-icons-list li{
+    margin-bottom:4rem;
+}
+.content-icons-list li img{
+    height: 21px;
+    width: 21px;
+}
+/* today's task */
+.today-task{
+    border-radius:20px;
+    height: 95%;
+    border: 1px solid #f3f3f3;
+    width:30%;
+    box-shadow:0px 0px 40px 10px #e0dede;
+}
+
+.today-task-header{
+    display:flex;
+    justify-content:space-between;
+    padding:1rem;
+    height: 5%;
+}
+
+.today-task-complete{
+    padding:1rem;
+    background:#09C497;
+    opacity:0.8;
+    margin:1rem;
+    height: 20%;
+    overflow: auto;
+}
+
+.today-task-list{
+    margin:1rem;
+    padding:1rem;
+    min-height:70%;
+    overflow-y: scroll;
+}
+.today-task-list label{
+    margin-left:1rem;
+    color:black;
+}
+.today-task-list input{
+    opacity: 0.36;
+}
+.today-task-button{
+    margin:1rem;
+    padding:1rem;
+    height: 20%;
+}
+.today-task-button button{
+    width:100%;
+    text-align:left;
+    background:#F3F3F3;
+    border-radius:5px;
+    border:none;
+    height:3rem;
+    padding:1rem;
+}
+
+/* flash cards */
+.flash-cards-1{
+    width:40%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    height:95%;
+}
+
+/* date and tracker div */
+.task-tracker{
+    height: 85%;
+    width: 13%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+.tracker-content img{
+    height: 55%;
+    width:'100%';
+    display:'block';
+    object-fit:'contain'
+}
+.tracker-content-date{
+    margin-top: 1.5rem;
+    height: 20%;
+}
+.task-tracker-button{
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    justify-content: space-between;
+}
+.task-tracker-button-1{
+    border: none;
+    background: #09C497 padding-box;
+    border-radius: 10px;
+    opacity: 0.8;
+    height: 40px;
+    font-size: 1rem;
+}
+.task-tracker-button-2{
+    border: none;
+    background: #F76F8E padding-box;
+    border-radius: 10px;
+    opacity: 0.8;
+    height: 40px;
+    font-size: 1rem;
 }
