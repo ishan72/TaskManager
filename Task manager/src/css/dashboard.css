@@ -166,6 +166,12 @@
     margin-top: 1.5rem;
     height: 20%;
 }
+div.months :first-of-type{
+    color: grey;
+}
+div.months :last-of-type{
+    color: grey;
+}
 .task-tracker-button{
     display: flex;
     flex-direction: column;

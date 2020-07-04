@@ -1,7 +1,9 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import {Ellipsis} from '../../assets/index';
+import {GlobalContext} from '../../Context/GlobalState';
 
 export const TodayTask=()=>{
+    const {task} = useContext(GlobalContext);
     return(
         <div>
             <div className='today-task-header'>
@@ -17,22 +19,12 @@ export const TodayTask=()=>{
                 <label for="1" style={{marginLeft:'1rem', color:'black'}}>Code review and team meeting</label><br/>
             </div>
             <div className='today-task-list'>
-                <input type="checkbox" name='1'/>
-                <label for="1">Go to the Dry cleaners</label><br/>
-                <input type="checkbox" name='1'/>
-                <label for="1">Learn to Cook pasta</label><br/>
-                <input type="checkbox" name='1'/>
-                <label for="1">work from home-east river slide client</label><br/>
-                <input type="checkbox" name='1'/>
-                <label for="1">check out the valorant game with the bois</label><br/>
-                <input type="checkbox" name='1'/>
-                <label for="1">Release developer life icon pack</label><br/>
-                <input type="checkbox" name='1'/>
-                <label for="1" style={{marginLeft:'1rem', color:'black'}}>look for an awesome leather chair for father's day</label><br/>
-                <input type="checkbox" name='1'/>
-                <label for="1">Release developer life icon pack</label><br/>
-                <input type="checkbox" name='1'/>
-                <label for="1">Release developer life icon pack</label><br/>
+            {task.length > 0 ? (task.map(task =>(
+                <>
+                    <input type="checkbox" name='1'/>
+                    <label for="1">{task.content}</label><br/>
+                </>                
+            ))):'<p>No task today</p>'}
             </div>
             <div className="today-task-button">
                 <button>+ Add a new task</button>
