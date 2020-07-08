@@ -1,8 +1,9 @@
 import React,{createContext, useReducer} from 'react';
+import AppReducer from './AppReducer';
 
 //Initial State
 const initialState={
-    task:[
+    tasks:[
         {
             id:1,
             content:'Design register page',
@@ -11,21 +12,39 @@ const initialState={
         {
             id:2,
             content:'Design login page',
-            completion:false,
+            completion:true,
         },
     ]
 };
 
 //Creating Context
-export const GlobalContext = createContext(initialState);
+export const GlobalContext = createContext();
 
 
 //Creating Provider
 export const GlobalProvider= ({children})=>{
-    const [state,dispatch] = useReducer(initialState);
+    const [state,dispatch] = useReducer(AppReducer,initialState);
+
+    //actions
+    const addTask=(task)=>{
+        dispatch({
+            type:'ADD_TASK',
+            payload: task
+        })
+    }
+
+    const doTask= id =>{
+        dispatch({
+            type:'DO_TASK',
+            payload: { id }
+        })
+    }
+
     return(
         <GlobalContext.Provider value={{
-            task:state.task
+            tasks:state.tasks,
+            addTask,
+            doTask
         }}>
             {children}
         </GlobalContext.Provider>

@@ -85,8 +85,10 @@
     width: 21px;
 }
 /* today's task */
+
 .today-task{
     border-radius:20px;
+    position: relative;
     height: 95%;
     border: 1px solid #f3f3f3;
     width:30%;
@@ -103,7 +105,7 @@
 .today-task-complete{
     padding:1rem;
     background:#09C497;
-    opacity:0.8;
+    opacity:0.5;
     margin:1rem;
     height: 20%;
     overflow: auto;
@@ -122,12 +124,35 @@
 .today-task-list input{
     opacity: 0.36;
 }
-.today-task-button{
+.today-task-add{
     margin:1rem;
     padding:1rem;
-    height: 20%;
+    position: absolute;
+    bottom: 0;
+    width: 95%;
 }
-.today-task-button button{
+.today-task-add input{
+    width: 100%;
+    padding: 1em;
+}
+
+.completedlist{
+    list-style-type: none;
+}
+.completedlist::before{
+    content: '';   
+    display: inline-block;   
+    height: 16px;   
+    width: 14px;
+    object-fit: contain;    
+    background-size: 20px;   
+    background-image: url('../assets/image/check.svg');   
+    background-repeat: no-repeat;   
+    margin-right: 10px;
+    background-position: center center;
+    vertical-align: middle;    
+}
+/* .today-task-button button{
     width:100%;
     text-align:left;
     background:#F3F3F3;
@@ -135,7 +160,7 @@
     border:none;
     height:3rem;
     padding:1rem;
-}
+} */
 
 /* flash cards */
 .flash-cards-1{

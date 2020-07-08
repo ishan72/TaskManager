@@ -6,7 +6,7 @@ import {GlobalContext} from '../../Context/GlobalState';
 
 export const Tracker=()=>{
     // using Context
-    const {task} = useContext(GlobalContext);
+    const {tasks} = useContext(GlobalContext);
     const Days = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];
     const Day = Days[new Date().getDay()];
     const Month = new Date().getDate();
@@ -24,7 +24,7 @@ export const Tracker=()=>{
                         <p>{Day} &#x2022; 32<sup>&#xb0;</sup>C</p>
                     </div>
                     <div className="task-tracker-button">
-                        <button className="task-tracker-button-1"><img src={Check} alt='' height='16px' width='16px'/>&nbsp;{task.length} task today</button>
+                        <button className="task-tracker-button-1"><img src={Check} alt='' height='16px' width='16px'/>&nbsp;{tasks.length} task today</button>
                         <button className="task-tracker-button-2"><img src={Calendar} alt='' height='16px' width='16px'/>&nbsp;3 deadlines today</button>
                     </div>
         </div>

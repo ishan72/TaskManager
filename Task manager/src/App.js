@@ -7,7 +7,9 @@ import {GlobalProvider} from './Context/GlobalState';
 function App() {
   return (
     <div className="App">
+      <GlobalProvider>
         <Routes/>
+      </GlobalProvider>
     </div>
   );
 }
