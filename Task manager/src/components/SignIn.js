@@ -27,7 +27,7 @@ export const SignIn = () => {
                 }
 
                 return setUserProfile().then(() => {
-                    history.push("/dashboard");
+                    history.push("/");
                 })
             })
             .catch(error => {
@@ -73,7 +73,7 @@ export const SignIn = () => {
             .signInWithEmailAndPassword(email, password)
             .then(res => {
                 authContext.setUser(res);
-                history.push('/dashboard')
+                history.push('/')
             })
             .catch(error => {
                 console.log(error.message);
